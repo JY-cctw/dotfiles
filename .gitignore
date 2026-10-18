@@ -1,3 +1,4 @@
 # This ignore file is for Stow dotfiles management
 
 .config/zsh/plugins/*
+!.config/zsh/plugins/.gitkeep
