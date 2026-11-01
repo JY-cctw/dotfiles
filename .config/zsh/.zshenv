@@ -36,5 +36,11 @@ export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 
 # ---------- PATH ----------
 # Personal binaries/scripts
-export PATH="$HOME/.local/bin:$HOME/bin/neovim/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/bin/neovim/bin:$PATH"
+
+# ---------- Completion -----------
+# Avoid compinit be execute in /etc/zsh/zshrc 
+skip_global_compinit=1
+
+
 . "$HOME/.cargo/env"

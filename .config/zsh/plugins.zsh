@@ -25,5 +25,10 @@ zplugin-update() {
 
 _zplugin_load zsh-users zsh-autosuggestions
 _zplugin_load zsh-users zsh-history-substring-search
-#_zplugin_load jeffreytse zsh-vi-mode
+
+if [[ "$USED_VIM_MODE" == "true" ]]; then
+  echo "Load zsh-vi-mode"
+_zplugin_load jeffreytse zsh-vi-mode
+fi
+
 _zplugin_load zdharma-continuum fast-syntax-highlighting

@@ -17,9 +17,10 @@ export FZF_DEFAULT_OPTS='
   --height=60%
   --layout=reverse
   --border=rounded
-#  --prompt="  "
-#  --pointer="  "
+  --prompt="  "
+  --pointer="  "
   --preview-window=right:65%:wrap:border-left
+  --walker=file,dir,follow,hidden
 '
 
 export _FZF_PREVIEW_CMD='batcat --color=always --style=plain,numbers --line-range=:500 {}'
