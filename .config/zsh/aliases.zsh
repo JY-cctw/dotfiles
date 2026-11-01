@@ -16,9 +16,25 @@ compdef eza=ls
 
 # Better cat
 if command -v bat >/dev/null 2>&1; then
-  alias cat='bat'
+  alias cat=bat
 elif command -v batcat >/dev/null 2>&1; then
-  alias cat='batcat'
+  alias cat=batcat
+  alias bat=batcat
+fi
+
+# Better find
+if command -v fdfind >/dev/null 2>&1; then
+  alias fd=fdfind
+fi
+
+# Ncurses disk usage viewer
+if command -v ncdu >/dev/null 2>&1; then
+  alias du=ncdu
+fi
+
+# Alternative to the df command, disk usage/free utility
+if command -v duf >/dev/null 2>&1; then
+  alias df=duf
 fi
 
 # =========================================================
@@ -27,10 +43,6 @@ fi
 
 alias grep='rg --color=auto'
 alias diff='diff --color=auto'
-#alias df='df -h'
-alias df='duf'
-alias du=ncdu
-alias fd=fdfind
 
 # =========================================================
 # Navigation
@@ -53,7 +65,6 @@ lf() { # zsh follow lf navigation
 # =========================================================
 
 #alias vim='nvim'
-alias nv='NVIM_APPNAME=nvim-minimal nvim'
 
 # =========================================================
 # Git
@@ -74,3 +85,6 @@ alias stream='mpv av://v4l2:/dev/video4 --fullscreen --demuxer-lavf-o=input_form
 # =========================================================
 alias nv-pers='NVIM_APPNAME=nvim-personal nvim'
 alias nv-lazy='NVIM_APPNAME=nvim-lazy nvim'
+alias nv-mini='NVIM_APPNAME=nvim-minimal nvim'
+
+alias nv=nv-lazy
