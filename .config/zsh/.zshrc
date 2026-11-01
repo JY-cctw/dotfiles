@@ -49,8 +49,8 @@ eval "$(zoxide init zsh)"
 # Completion
 # =========================================================
 
-# Setup fpath
-fpath=(~/.config/zsh/completion $fpath) 
+# Yazi shell completion script
+fpath=(~/.config/zsh/completion $fpath)
 
 # Load completion system
 autoload -Uz compinit
@@ -99,6 +99,13 @@ if [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]]; then
   source "$HOME/.fzf/shell/completion.zsh"
 fi
 
+#==========================================================
+# Shell Mode
+# =========================================================
+
+# if not used VIM mode then change below variable to false
+USED_VIM_MODE="true"
+
 # =========================================================
 # Modular Config Files
 # =========================================================
@@ -109,8 +116,10 @@ source "$ZDOTDIR/fzf.zsh"
 # Aliases
 source "$ZDOTDIR/aliases.zsh"
 
+if [[ "$USED_VIM_MODE" == "true" ]]; then
 # Custom keybindings
 source "$ZDOTDIR/bindings.zsh"
+fi
 
 # Plugins and plugin manager
 source "$ZDOTDIR/plugins.zsh"
@@ -125,4 +134,9 @@ source "$ZDOTDIR/prompt.zsh"
 
 if [[ -f "$ZDOTDIR/local.zsh" ]]; then
   source "$ZDOTDIR/local.zsh"
+fi
+
+if [[ "$USED_VIM_MODE" != "true" ]]; then
+bindkey -e
+echo "Now is working on Emacs Mode"
 fi
