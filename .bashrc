@@ -115,4 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#Add by Chris
+eval "$(fzf --bash)"
+
 . "$HOME/.cargo/env"
